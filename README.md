@@ -24,7 +24,7 @@ pels$ go build -o fast-cli-prometheus-exporter cmd/fast-cli-prometheus-exporter/
 pels$ ./fast-cli-prometheus-exporter
 ```
 
-There are some flags to tweak the HTTP address, the interval and the distribution/histogram's bucket configuration:
+There are some flags to tweak the HTTP address, the interval and the distribution/histogram's bucket configuration (although they do come with reasonable defaults):
 
 ```bash
 pels$ ./fast-cli-prometheus-exporter -help          
@@ -50,6 +50,8 @@ scrape_configs:
     static_configs:
       - targets: ["localhost:8080"]
 ```
+
+As a rule of thumb, it makes sense for the `scrape_interval` to match the `interval` passed to the exporter.
 
 ## Example
 
